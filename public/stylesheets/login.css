@@ -1,0 +1,197 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Microsoft Yahei";
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: "Microsoft Yahei";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background: linear-gradient(-135deg, #51D15B, #42A855);
+    background: -moz-linear-gradient(-135deg, #51D15B, #42A855);
+    background: -webkit-linear-gradient(-135deg, #51D15B, #42A855);
+    background: -o-linear-gradient(-135deg, #51D15B, #42A855);
+}
+
+.flex-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-width {
+    width: 80%;
+}
+
+/*最外层*/
+
+.login-box {
+    width: 20%;
+    min-width: 304px;
+    max-width: 404px;
+    height: 50%;
+    min-height: 368px;
+    max-height: 468px;
+    flex-direction: column;
+    box-shadow: 1px 1px 15px #7B8C99;
+    background: #fff;
+}
+
+/*LOGIN标题*/
+
+.sign-title {
+    color: #42A855;
+    border: 2px solid #42A855;
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+}
+
+/*图片切换*/
+
+.picture-carousel {
+    position: relative;
+    display: flex;
+    margin: 10%;
+}
+
+/*图片切换箭头*/
+
+.arrow {
+    z-index: 3;
+    position: absolute;
+    font-size: 60px;
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+
+.arrow:hover {
+    cursor: pointer;
+}
+
+.left-arrow {
+    left: 0;
+}
+
+.before-arrow {
+    width: 0px;
+    height: 0px;
+    border-width: 30px;
+    border-style: solid;
+    border-color: transparent #51D15B transparent transparent;
+}
+
+.right-arrow {
+    right: 0;
+}
+
+.after-arrow {
+    width: 0px;
+    height: 0px;
+    border-width: 30px;
+    border-style: solid;
+    border-color: transparent transparent transparent #51D15B;
+}
+
+.picture-carousel img {
+    width: 80px;
+    height: 80px;
+    transition: all 0.2s linear;
+    -moz-transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+}
+
+.img-setting {
+    margin: 0px -15px;
+}
+
+.p1 {
+    transform: scale(0.6);
+    z-index: 1;
+}
+
+.p1:hover {
+    transform: scale(0.8);
+}
+
+.p2 {
+    transform: scale(0.8);
+    z-index: 2;
+}
+
+.p2:hover {
+    transform: scale(1);
+}
+
+.p3 {
+    transform: scale(1);
+    z-index: 3;
+}
+
+.p3:hover {
+    transform: scale(1.2);
+}
+
+/*用户名*/
+
+.name-box {
+    display: flex;
+    justify-content: center;
+    border: 1px solid #51D15B;
+}
+
+.name-box .user-name {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    outline-color: #42A855;
+    border: none;
+    font-size: 16px;
+}
+
+/*登录按钮*/
+
+.button-box {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0px 20px;
+}
+
+.button-box .login-button {
+    width: 100%;
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+    background: #42A855;
+    color: white;
+    font-size: 16px;
+}
+
+/*错误信息*/
+
+.error-box {
+    color: #42A855;
+    border: 2px solid #42A855;
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+}
+
+.error-box span {
+    visibility: hidden;
+    color: #d43f3a;
+    font-size: 14px;
+}
