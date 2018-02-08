@@ -1,18 +1,18 @@
 //用于存储图片顺序  
-var imgArray = ['1', '2', '3', '4', '5'];
+const imgArray = ['1', '2', '3', '4', '5'];
 
 //获取箭头  
-var leftArrow = document.getElementsByClassName('left-arrow')[0];
-var rightArrow = document.getElementsByClassName('right-arrow')[0];
+const leftArrow = document.getElementsByClassName('left-arrow')[0];
+const rightArrow = document.getElementsByClassName('right-arrow')[0];
 
 //获取用户名  
-var userName = document.getElementsByClassName('user-name')[0];
+const userName = document.getElementsByClassName('user-name')[0];
 
 //获取登录按钮  
-var loginButton = document.getElementsByClassName('login-button')[0];
+const loginButton = document.getElementsByClassName('login-button')[0];
 
 // 获取错误信息栏  
-var errorMessage = document.getElementsByClassName('error-message')[0];
+const errorMessage = document.getElementsByClassName('error-message')[0];
 
 // 添加左箭头监听事件  
 leftArrow.addEventListener('click', function () {
@@ -32,7 +32,7 @@ rightArrow.addEventListener('click', function () {
 
 // 切换图片  
 function carouselImg() {
-    for (var count = 0; count < imgArray.length; count++) {
+    for (let count = 0; count < imgArray.length; count++) {
         document.getElementsByTagName('img')[count].src = 'images/' + imgArray[count] + '.png';
         document.getElementsByTagName('img')[count].alt = imgArray[count] + '.png';
     };
@@ -48,14 +48,14 @@ loginButton.addEventListener('click', function () {
         errorMessage.style.visibility = 'visible';
     } else {
         window.location.href =
-            encodeURI('index.html?selectpicture=' + document.getElementsByClassName('p3')[0].alt +
+            encodeURI('index?selectpicture=' + document.getElementsByClassName('p3')[0].alt +
                 '&username=' + userName.value);
     }
 });
 
 // Enter按键绑定登录事件  
 document.onkeydown = function (event) {
-    var e = event || window.event;
+    let e = event || window.event;
     if (e && e.keyCode == 13) {
         loginButton.click();
     }
