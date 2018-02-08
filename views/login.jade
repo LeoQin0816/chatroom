@@ -1,0 +1,29 @@
+extends layout
+block css
+    link(rel='stylesheet', href='/stylesheets/login.css')
+block content
+    div.login-box.flex-box
+        //- 登录标题栏
+        h2.sign-title.box-width LOGIN
+        //- 头像栏
+        div.picture-carousel
+            div.arrow.left-arrow
+               div.before-arrow
+            img.p1.img-setting(src="images/1.png",alt="1.png") 
+            img.p2.img-setting(src="images/2.png",alt="2.png") 
+            img.p3.img-setting(src="images/3.png",alt="3.png") 
+            img.p4.img-setting(src="images/4.png",alt="4.png") 
+            img.p5.img-setting(src="images/5.png",alt="5.png") 
+            div.arrow.right-arrow
+               div.after-arrow
+        //- 用户名栏
+        div.name-box.box-width
+            input(type="text",class="user-name box-width",placeholder="Please Type Your Name")
+        //- 确认栏
+        div.button-box.box-width
+            input(type="button",class="login-button box-width",value="Login The Chatroom")
+        //- 错误信息栏
+        div.error-box.box-width
+            span.error-message Welcome to chatroom!
+block js
+    script(src='/javascripts/login.js')

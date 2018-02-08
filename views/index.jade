@@ -1,29 +1,30 @@
 extends layout
 block css
-    link(rel='stylesheet', href='/stylesheets/login.css')
+    link(rel='stylesheet', href='/stylesheets/index.css')
 block content
-    div.login-box.flex-box
-        //- 登录标题栏
-        h2.sign-title.box-width LOGIN
-        //- 头像栏
-        div.picture-carousel
-            div.arrow.left-arrow
-               div.before-arrow
-            img.p1.img-setting(src="images/1.png",alt="1.png") 
-            img.p2.img-setting(src="images/2.png",alt="2.png") 
-            img.p3.img-setting(src="images/3.png",alt="3.png") 
-            img.p4.img-setting(src="images/4.png",alt="4.png") 
-            img.p5.img-setting(src="images/5.png",alt="5.png") 
-            div.arrow.right-arrow
-               div.after-arrow
-        //- 用户名栏
-        div.name-box.box-width
-            input(type="text",class="user-name box-width",placeholder="Please Type Your Name")
-        //- 确认栏
-        div.button-box.box-width
-            input(type="button",class="login-button box-width",value="Login The Chatroom")
-        //- 错误信息栏
-        div.error-box.box-width
-            span.error-message Welcome to chatroom!
+    div.chat-box
+        //- 聊天框头部
+        div.chat-header
+            div.button-box
+                input(type="button",class="log-out",value="LOGOUT")
+        //- 聊天框主体
+        div.chat-body
+            //- 聊天框左侧
+            div.chat-body-left
+                //- 聊天框左侧聊天内容
+                div.chat-content
+                //- 聊天框左侧聊天输入框
+                div.chat-edit
+                    input(type="text",class="edit-box",placeholder="Please Type You Message",maxlength="15")
+                    input(type="button",class="edit-button",value="SEND")
+            //- 聊天框右侧
+            div.chat-body-right
+                //- 聊天框右侧统计人数
+                div.online-count Online:0
+                //- 聊天框右侧用户名  
+                div.user-name user-name
+                //- 聊天框右侧头像
+                img.user-img
 block js
-    script(src='/javascripts/login.js')
+    //- script(src='/javascripts/index.js')
+    //- script(src='/javascripts/socket.io.js')
