@@ -1,5 +1,5 @@
 //用于存储图片顺序  
-const imgArray = ['1', '2', '3', '4', '5'];
+const imgArray = ['1', '2', '3', '4', '5','6','7','8','9','10','11','12'];
 
 //获取箭头  
 const leftArrow = document.getElementsByClassName('left-arrow')[0];
