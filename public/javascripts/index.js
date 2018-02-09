@@ -63,13 +63,13 @@ socket.on('message', function (information) {
 
 // 当接收到有人连接进来
 socket.on('connected', function (onlinecount) {
-    console.log(onlinecount);
+    // console.log(onlinecount);
     onlineCount.innerHTML = 'Online:' + onlinecount;
 });
 
 // 当接收到有人断开后
 socket.on('disconnected', function (onlinecount) {
-    console.log(onlinecount);
+    // console.log(onlinecount);
     onlineCount.innerHTML = 'Online:' + onlinecount;
 });
 
