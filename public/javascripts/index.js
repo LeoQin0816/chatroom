@@ -1,36 +1,36 @@
-// 获取url里面的内容  
+// 获取url里面的内容
 const url = decodeURI(location.href).split('?')[1].split('&');
 
-// 获取聊天内容框  
+// 获取聊天内容框
 const chatContent = document.getElementsByClassName('chat-content')[0];
 
-// 获取聊天输入框  
+// 获取聊天输入框
 const editBox = document.getElementsByClassName('edit-box')[0];
 
-// 获取聊天输入框发送按钮  
+// 获取聊天输入框发送按钮
 const editButton = document.getElementsByClassName('edit-button')[0];
 
-// 获取用户名栏  
+// 获取用户名栏
 const userName = document.getElementsByClassName('user-name')[0];
 
-// 获取在线人数栏  
+// 获取在线人数栏
 const onlineCount = document.getElementsByClassName('online-count')[0];
 
-// 把登录页面的名称放在右侧  
+// 把登录页面的名称放在右侧
 userName.innerHTML = url[1].split('=')[1];
 const userImg = document.getElementsByClassName('user-img')[0];
 
-// 把登录页面的头像放在右侧  
+// 把登录页面的头像放在右侧
 userImg.src = 'images/' + url[0].split('=')[1];
 const logOut = document.getElementsByClassName('log-out')[0];
 
-// 发送按钮绑定点击事件  
+// 发送按钮绑定点击事件
 editButton.addEventListener('click', sendMessage);
 
-// 登出按钮绑定点击事件  
+// 登出按钮绑定点击事件
 logOut.addEventListener('click', closePage);
 
-// 绑定Enter键和发送事件  
+// 绑定Enter键和发送事件
 document.onkeydown = function (event) {
     let e = event || window.event;
     if (e && e.keyCode === 13) {
@@ -40,7 +40,7 @@ document.onkeydown = function (event) {
     }
 };
 
-// 关闭页面  
+// 关闭页面
 function closePage() {
     let userAgent = navigator.userAgent;
     if (userAgent.indexOf("Firefox") != -1 || userAgent.indexOf("Chrome") != -1) {
@@ -51,10 +51,10 @@ function closePage() {
         window.close();
     }
 }
-// socket部分  
+// socket部分
 const socket = io();
 
-// 当接收到消息并且不是本机时生成聊天气泡  
+// 当接收到消息并且不是本机时生成聊天气泡
 socket.on('message', function (information) {
     if (information.name !== userName.textContent) {
         createOtherMessage(information);
@@ -120,7 +120,7 @@ function createMyMessage() {
     chatContent.scrollTop = chatContent.scrollHeight;
 }
 
-// 生成其他用户的聊天气泡  
+// 生成其他用户的聊天气泡
 function createOtherMessage(information) {
     let otherMessageBox = document.createElement('div');
     otherMessageBox.className = 'other-message-box';

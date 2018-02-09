@@ -15,10 +15,8 @@ body {
 }
 
 body {
-    background: linear-gradient(-135deg, #51D15B, #42A855);
-    background: -moz-linear-gradient(-135deg, #51D15B, #42A855);
-    background: -webkit-linear-gradient(-135deg, #51D15B, #42A855);
-    background: -o-linear-gradient(-135deg, #51D15B, #42A855);
+    background: url('../images/bg1.jpeg') no-repeat;
+    background-size: cover;
 }
 
 .flex-box {
