@@ -61,19 +61,19 @@ socket.on('message', function (information) {
     }
 });
 
-// 当接收到有人连接进来  
+// 当接收到有人连接进来
 socket.on('connected', function (onlinecount) {
     console.log(onlinecount);
     onlineCount.innerHTML = 'Online:' + onlinecount;
 });
 
-// 当接收到有人断开后  
+// 当接收到有人断开后
 socket.on('disconnected', function (onlinecount) {
     console.log(onlinecount);
     onlineCount.innerHTML = 'Online:' + onlinecount;
 });
 
-// 发送本机的消息  
+// 发送本机的消息
 function sendMessage() {
     if (editBox.value != '') {
         let myInformation = {
@@ -85,10 +85,9 @@ function sendMessage() {
         createMyMessage();
         editBox.value = '';
     }
-
 };
 
-// 生成本机的聊天气泡  
+// 生成本机的聊天气泡
 function createMyMessage() {
     let myMessageBox = document.createElement('div');
     myMessageBox.className = 'my-message-box';

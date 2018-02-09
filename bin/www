@@ -6,8 +6,8 @@
 
 const app = require('../app');
 const debug = require('debug')('chatroom:server');
-const http = require('http');
-
+// 删除http服务，使用expresshttp服务替代
+// var http = require('http');
 /**
  * Get port from environment and store in Express.
  */
@@ -19,7 +19,11 @@ app.set('port', port);
  * Create HTTP server.
  */
 
-const server = http.createServer(app);
+var server = app.listen(port);
+const io = require('socket.io').listen(server);
+
+// 注释http服务
+// const server = http.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
@@ -88,3 +92,30 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
+
+// 在线人数统计  
+let onlineCount = 0; 
+
+
+// 当有用户连接进来时  
+io.on('connection', function (socket) {
+  console.log('a user connected');
+
+  // 发送给客户端在线人数  
+  io.emit('connected', ++onlineCount);
+
+  // 当有用户断开  
+  socket.on('disconnect', function () {
+    console.log('user disconnected');
+
+    // 发送给客户端断在线人数  
+    io.emit('disconnected', --onlineCount);
+    console.log(onlineCount);
+  });
+
+  // 收到了客户端发来的消息  
+  socket.on('message', function (message) {
+    // 给客户端发送消息  
+    io.emit('message', message);
+  });
+}); 
