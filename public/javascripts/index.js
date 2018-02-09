@@ -44,7 +44,7 @@ document.onkeydown = function (event) {
 function closePage() {
     let userAgent = navigator.userAgent;
     if (userAgent.indexOf("Firefox") != -1 || userAgent.indexOf("Chrome") != -1) {
-        window.location.href = "about:blank";
+        window.location.href = "http://"+location.host;
     } else {
         window.opener = null;
         window.open("", "_self");
