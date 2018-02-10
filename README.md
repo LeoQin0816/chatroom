@@ -2,6 +2,7 @@
 
 ## 关于
 * express
+* jade
 
 借鉴CyanChan前端模板,迁移到`express`框架,采用`socket`进行聊天室通信,`pm2`守护进程。
 
